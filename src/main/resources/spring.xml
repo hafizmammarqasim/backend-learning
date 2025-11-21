@@ -7,11 +7,21 @@
 
     <bean
           id = "dev" class = "com.ammar.expenseManagerDemo.Dev">
+          <!-- Setter Injection-->
+<!--          <property name="age" value="12"> </property>-->
+<!--          <property name="laptop" ref="lap1"> </property>-->
 
+          <!--Constructor Injection-->
+        <constructor-arg index="0" value="15"/>
+        <constructor-arg index="1" ref = "lap1"/>
     </bean>
+
 
     <bean
             id = "dev1" class = "com.ammar.expenseManagerDemo.Dev">
+    </bean>
 
+    <bean
+        id = "lap1" class = "com.ammar.expenseManagerDemo.Laptop">
     </bean>
 </beans>

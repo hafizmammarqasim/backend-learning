@@ -22,5 +22,8 @@ public class App
 
         //Now we need to configure the xml file
        // devWithSpring.compile();
+
+        Laptop laptop = devWithSpring.getLaptop();
+        laptop.run();
     }
 }
