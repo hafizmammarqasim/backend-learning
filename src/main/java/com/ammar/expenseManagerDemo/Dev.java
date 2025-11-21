@@ -3,9 +3,10 @@ package com.ammar.expenseManagerDemo;
 public class Dev {
 
     private Laptop laptop;
+    private Computer computer;
     private int age;
 
-    public Dev(int age, Laptop laptop){
+    public Dev(int age, Laptop laptop, Computer computer){
         this.age = age;
         this.laptop = laptop;
         System.out.println("Dev (arg constructor) is running");
@@ -28,6 +29,15 @@ public class Dev {
         this.laptop = laptop;
     }
 
+    public Computer getComputer() {
+        return computer;
+    }
+
+    public void setComputer(Computer computer) {
+        System.out.println("Computer setter");
+        this.computer = computer;
+    }
+
     public int getAge() {
         return age;
     }
@@ -36,4 +46,6 @@ public class Dev {
         System.out.println("Age setter");
         this.age = age;
     }
+
+
 }

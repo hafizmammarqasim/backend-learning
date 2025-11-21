@@ -23,7 +23,9 @@ public class App
         //Now we need to configure the xml file
        // devWithSpring.compile();
 
+        System.out.println(" ");
+        System.out.println("----This is main----");
         Laptop laptop = devWithSpring.getLaptop();
-        laptop.run();
+        laptop.start();
     }
 }

@@ -3,25 +3,50 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- bean definitions here -->
-
     <bean
-          id = "dev" class = "com.ammar.expenseManagerDemo.Dev">
+          id = "dev" class = "com.ammar.expenseManagerDemo.Dev" autowire="byName">
+
           <!-- Setter Injection-->
 <!--          <property name="age" value="12"> </property>-->
 <!--          <property name="laptop" ref="lap1"> </property>-->
 
           <!--Constructor Injection-->
-        <constructor-arg index="0" value="15"/>
-        <constructor-arg index="1" ref = "lap1"/>
-    </bean>
+<!--        <constructor-arg index="0" value="15"/>-->
+<!--        <constructor-arg index="1" ref = "lap1"/>-->
 
+        <!-- Need for Autowire because of this mess below
+        <property name="age" value="14"> </property>
+        <property name = "computer" ref ="computer"> </property>
+        <property name="laptop" ref ="lap1"> </property>
+        -->
+    </bean>
 
     <bean
-            id = "dev1" class = "com.ammar.expenseManagerDemo.Dev">
+            id = "dev2" class = "com.ammar.expenseManagerDemo.Dev" autowire="byType">
+    </bean>
+
+
+<!--    <bean-->
+<!--            id = "dev1" class = "com.ammar.expenseManagerDemo.Dev">-->
+<!--    </bean>-->
+
+
+<!--
+    Have to comment this, otherwise there would be conflict in types, and can't use primary as well,
+    Otherwise there would be two primaries and hence the error
+-->
+<!--    <bean-->
+<!--        id = "lap1" class = "com.ammar.expenseManagerDemo.Laptop">-->
+<!--    </bean>-->
+
+<!--    Updating lap1 to laptop to make "byName" work-->
+    <bean
+            id = "laptop" class = "com.ammar.expenseManagerDemo.Laptop">
     </bean>
 
     <bean
-        id = "lap1" class = "com.ammar.expenseManagerDemo.Laptop">
+            id = "desktop" class = "com.ammar.expenseManagerDemo.Desktop" primary="true">
     </bean>
+
+    <bean id= "computer" class="com.ammar.expenseManagerDemo.Desktop"> </bean>
 </beans>
