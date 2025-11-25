@@ -51,7 +51,7 @@ public class Expense {
         this.expAmount = expAmount;
     }
 
-    public String getCategoryName(){
+    public String getCategory(){
         return category.getCategory();
     }
 }

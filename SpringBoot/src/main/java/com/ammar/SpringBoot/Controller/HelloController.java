@@ -12,7 +12,7 @@ public class HelloController {
     // ANNOTATION 2: @GetMapping("/test")
     // This is a line item on the Menu.
     // It says: "If a customer goes to http://localhost:8080/, run this method."
-    @GetMapping("/")
+    @GetMapping("/api")
     public String welcomeMessage(){
         return "Hello, Lets start our first Project";
     }
